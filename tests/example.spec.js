@@ -17,8 +17,8 @@ test('TC-001 | Halaman login berhasil ditampilkan', async ({ page }) => {
 test('TC-002 | Login berhasil dengan kredensial valid', async ({ page }) => {
   await page.goto('https://stag-cbt.adv.my.id/login');
 
-  await page.fill('input[placeholder="Masukkan Email / NISN / NIP"]', 'admin');
-  await page.fill('input[placeholder="Masukkan password"]', 'adminnimda');
+  await page.fill('input[placeholder="Masukkan Email / NISN / NIP"]', 'test');
+  await page.fill('input[placeholder="Masukkan password"]', 'test');
   await page.click('button:has-text("Masuk")');
   await page.waitForLoadState('networkidle');
 
@@ -31,7 +31,7 @@ test('TC-002 | Login berhasil dengan kredensial valid', async ({ page }) => {
 test('TC-003 | Login gagal dengan password salah', async ({ page }) => {
   await page.goto('https://stag-cbt.adv.my.id/login');
 
-  await page.fill('input[placeholder="Masukkan Email / NISN / NIP"]', 'admin');
+  await page.fill('input[placeholder="Masukkan Email / NISN / NIP"]', 'test');
   await page.fill('input[placeholder="Masukkan password"]', 'passwordsalah123');
   await page.click('button:has-text("Masuk")');
   await page.waitForLoadState('networkidle');
@@ -46,7 +46,7 @@ test('TC-004 | Login gagal dengan email salah', async ({ page }) => {
   await page.goto('https://stag-cbt.adv.my.id/login');
 
   await page.fill('input[placeholder="Masukkan Email / NISN / NIP"]', 'emailsalah@test.com');
-  await page.fill('input[placeholder="Masukkan password"]', 'adminnimda');
+  await page.fill('input[placeholder="Masukkan password"]', 'test');
   await page.click('button:has-text("Masuk")');
   await page.waitForLoadState('networkidle');
 
@@ -69,7 +69,7 @@ test('TC-005 | Login gagal dengan field kosong', async ({ page }) => {
 test('TC-006 | Login gagal dengan email kosong', async ({ page }) => {
   await page.goto('https://stag-cbt.adv.my.id/login');
 
-  await page.fill('input[placeholder="Masukkan password"]', 'adminnimda');
+  await page.fill('input[placeholder="Masukkan password"]', 'test');
   await page.click('button:has-text("Masuk")');
   await page.waitForLoadState('networkidle');
 
@@ -81,7 +81,7 @@ test('TC-006 | Login gagal dengan email kosong', async ({ page }) => {
 test('TC-007 | Login gagal dengan password kosong', async ({ page }) => {
   await page.goto('https://stag-cbt.adv.my.id/login');
 
-  await page.fill('input[placeholder="Masukkan Email / NISN / NIP"]', 'admin');
+  await page.fill('input[placeholder="Masukkan Email / NISN / NIP"]', 'test');
   await page.click('button:has-text("Masuk")');
   await page.waitForLoadState('networkidle');
 
