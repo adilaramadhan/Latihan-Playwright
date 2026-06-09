@@ -2,7 +2,7 @@ const { test, expect } = require('@playwright/test');
 
 // Test 1: Verifikasi halaman login muncul
 test('TC-001 | Halaman login berhasil ditampilkan', async ({ page }) => {
-  await page.goto('https://stag-cbt.adv.my.id/login');
+  await page.goto('https://..');
 
   await expect(page.locator('h3:has-text("Login")')).toBeVisible();
   await expect(page.locator('text=Masuk untuk memulai ujian online')).toBeVisible();
@@ -15,7 +15,7 @@ test('TC-001 | Halaman login berhasil ditampilkan', async ({ page }) => {
 
 // Test 2: Login berhasil
 test('TC-002 | Login berhasil dengan kredensial valid', async ({ page }) => {
-  await page.goto('https://stag-cbt.adv.my.id/login');
+  await page.goto('https://..');
 
   await page.fill('input[placeholder="Masukkan Email / NISN / NIP"]', 'test');
   await page.fill('input[placeholder="Masukkan password"]', 'test');
@@ -29,7 +29,7 @@ test('TC-002 | Login berhasil dengan kredensial valid', async ({ page }) => {
 
 // Test 3: Login dengan password salah
 test('TC-003 | Login gagal dengan password salah', async ({ page }) => {
-  await page.goto('https://stag-cbt.adv.my.id/login');
+  await page.goto('https://..');
 
   await page.fill('input[placeholder="Masukkan Email / NISN / NIP"]', 'test');
   await page.fill('input[placeholder="Masukkan password"]', 'passwordsalah123');
@@ -43,7 +43,7 @@ test('TC-003 | Login gagal dengan password salah', async ({ page }) => {
 
 // Test 4: Login dengan email salah
 test('TC-004 | Login gagal dengan email salah', async ({ page }) => {
-  await page.goto('https://stag-cbt.adv.my.id/login');
+  await page.goto('https://..');
 
   await page.fill('input[placeholder="Masukkan Email / NISN / NIP"]', 'emailsalah@test.com');
   await page.fill('input[placeholder="Masukkan password"]', 'test');
@@ -56,7 +56,7 @@ test('TC-004 | Login gagal dengan email salah', async ({ page }) => {
 
 // Test 5: Login dengan field kosong semua
 test('TC-005 | Login gagal dengan field kosong', async ({ page }) => {
-  await page.goto('https://stag-cbt.adv.my.id/login');
+  await page.goto('https://..');
 
   await page.click('button:has-text("Masuk")');
   await page.waitForLoadState('networkidle');
@@ -67,7 +67,7 @@ test('TC-005 | Login gagal dengan field kosong', async ({ page }) => {
 
 // Test 6: Login dengan email kosong
 test('TC-006 | Login gagal dengan email kosong', async ({ page }) => {
-  await page.goto('https://stag-cbt.adv.my.id/login');
+  await page.goto('https://..');
 
   await page.fill('input[placeholder="Masukkan password"]', 'test');
   await page.click('button:has-text("Masuk")');
@@ -79,7 +79,7 @@ test('TC-006 | Login gagal dengan email kosong', async ({ page }) => {
 
 // Test 7: Login dengan password kosong
 test('TC-007 | Login gagal dengan password kosong', async ({ page }) => {
-  await page.goto('https://stag-cbt.adv.my.id/login');
+  await page.goto('https://..');
 
   await page.fill('input[placeholder="Masukkan Email / NISN / NIP"]', 'test');
   await page.click('button:has-text("Masuk")');
@@ -91,7 +91,7 @@ test('TC-007 | Login gagal dengan password kosong', async ({ page }) => {
 
 // Test 8: Cek tombol show/hide password
 test('TC-008 | Tombol show hide password berfungsi', async ({ page }) => {
-  await page.goto('https://stag-cbt.adv.my.id/login');
+  await page.goto('https://..');
 
   const passwordInput = page.locator('input[placeholder="Masukkan password"]');
 
